@@ -1,0 +1,6 @@
+bibentry(
+  bibtype  = "Manual",
+  title    = "hgp: Handelgroup package",
+  author   = "Billings, Zane and Handel, Andreas",
+  year = "2023"
+)
