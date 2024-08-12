@@ -5,7 +5,7 @@ Version: 0.0.2
 Authors@R: 
     person("Zane", "Billings", , "wz.billings@gmail.com", role = c("aut", "cre"),
            comment = c(ORCID = "0000-0002-0184-6134"))
-Description: Miscellaneous functions used for Handelgroup research
+Description: Miscellaneous functions used for Handelgroup research.
 Encoding: UTF-8
 LazyData: true
 RoxygenNote: 7.3.2

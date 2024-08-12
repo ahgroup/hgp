@@ -13,14 +13,32 @@ knitr::opts_chunk$set(
 )
 ```
 
+<!-- ASCII ART BANNER TITLE -->
+```
+  _    _                 _      _  _____                       _____           _                    
+ | |  | |               | |    | |/ ____|                     |  __ \         | |                   
+ | |__| | __ _ _ __   __| | ___| | |  __ _ __ ___  _   _ _ __ | |__) |_ _  ___| | ____ _  __ _  ___ 
+ |  __  |/ _` | '_ \ / _` |/ _ \ | | |_ | '__/ _ \| | | | '_ \|  ___/ _` |/ __| |/ / _` |/ _` |/ _ \
+ | |  | | (_| | | | | (_| |  __/ | |__| | | | (_) | |_| | |_) | |  | (_| | (__|   < (_| | (_| |  __/
+ |_|  |_|\__,_|_| |_|\__,_|\___|_|\_____|_|  \___/ \__,_| .__/|_|   \__,_|\___|_|\_\__,_|\__, |\___|
+                                                        | |                               __/ |     
+                                                        |_|                              |___/      
+```
+<!-- END OF TITLE -->
+
 # `hgp: HandelGroupPackage`
 
 <!-- badges: start -->
 <!-- badges: end -->
 
 `hgp` is a package for storing utility functions for use across handelgroup.
-Right now, `hgp` only contains a `ggplot2` theme. But we will update this
-description as we add more stuff.
+Right now, `hgp` contains the following utilities:
+
+* A group-standard `ggplot2` theme function;
+* A set of functions for working with HAI data;
+* A function to standardize influenza strain names for the strains used in the
+datasets we have available to us; along with a corresponding data set of
+standardized strain names.
 
 **Because this repo is public, absolutely NO sensitive or confidential
 information should be stored here. This repo is strictly for shared utilities.**
@@ -30,8 +48,8 @@ information should be stored here. This repo is strictly for shared utilities.**
 You can install the development version of hgp from [GitHub](https://github.com/) with:
 
 ``` r
-# install.packages("devtools")
-devtools::install_github("ahgroup/hgp")
+# install.packages("remotes")
+remotes::install_github("ahgroup/hgp")
 ```
 
 Or if you are in a repository with `renv` enabled (recommended):
@@ -75,8 +93,6 @@ should use `devtools::document()` to generate the documentation files.
 * Please run `devtools:check()` before merging any new functionality to the
 main branch and fix any resulting messages. It is unnecessary to `build` the
 package, we just need to ensure that any checks pass.
-	* Note that as of `2023-11-03`, we have not decided on a package license,
-	so you will get one warning in the check results for that.
 * `renv` is initialized for this repository using the EXPLICIT snapshot mode.
 	* If you need to import a new package, you MUST update the `NAMESPACE` file
 	appropriately before invoking `renv::snapshot()`.
