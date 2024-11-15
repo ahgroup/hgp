@@ -15,7 +15,6 @@ BugReports: https://github.com/ahgroup/hgp/issues
 Depends: 
     R (>= 2.10)
 Suggests:
-    rlang,
     dplyr,
     forcats,
     ggplot2,
