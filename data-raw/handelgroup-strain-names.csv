@@ -1,47 +1,66 @@
-subtype,analysis_name,genbank_strain_name,short_name,factor_order,vaccine_strain
-h1,H1N1-South Carolina-1918,A/H1N1/South Carolina/1/1918,SC/18,1,FALSE
-h1,H1N1-Puerto Rico-1934,A/H1N1/Puerto Rico/8/1934,PR/34,2,FALSE
-h1,H1N1-Weiss-1943,A/H1N1/Weiss/43,Wei/43,3,FALSE
-h1,H1N1-Fort Monmouth-1947,A/H1N1/Fort Monmouth/1/1947,FM/47,4,FALSE
-h1,H1N1-Denver-1957,A/H1N1/Denver/1957,Den/57,5,FALSE
-h1,H1N1-New Jersey-1976,A/H1N1/New Jersey/8/1976,NJ/76,6,FALSE
-h1,H1N1-Ussr-1977,A/H1N1/Ussr/90/1977,USSR/77,7,FALSE
-h1,H1N1-Brazil-1978,A/H1N1/Brazil/11/1978,Bra/78,8,FALSE
-h1,H1N1-California-1978,A/H1N1/California/10/1978,CA/78,9,FALSE
-h1,H1N1-Chile-1983,A/H1N1/Chile/1/1983,Chi/83,10,FALSE
-h1,H1N1-Singapore-1986,A/H1N1/Singapore/6/1986,Sing/86,11,FALSE
-h1,H1N1-Texas-1991,A/H1N1/Texas/36/1991,TX/91,12,FALSE
-h1,H1N1-Beijing-1995,A/H1N1/Beijing/262/1995,Bei/95,13,FALSE
-h1,H1N1-New Caledonia-1999,A/H1N1/New Caledonia/20/1999,NC/99,14,FALSE
-h1,H1N1-Solomon Islands-2006,A/H1N1/Solomon Islands/3/2006,SI/06,15,FALSE
-h1,H1N1-Brisbane-2007,A/H1N1/Brisbane/59/2007,Bris/07,16,FALSE
-h1,H1N1-California-2009,A/H1N1/California/07/2009,CA/09,17,TRUE
-h1,H1N1-Michigan-2015,A/H1N1/Michigan 45/2015,MI/15,18,TRUE
-h1,H1N1-Brisbane-2018,A/H1N1/Brisbane/02/2018,Bris/18,19,TRUE
-h1,H1N1-Guangdong Maonan-2019,A/H1N1/Guangdong-Maonan/SWL1536/2019,GD/19,20,TRUE
-h1,H1N1-Victoria-2019,A/H1N1/Victoria/2570/2019,Vic/19,21,TRUE
-h3,H3N2-Hong Kong-1968,A/H3N2/Hong Kong/8/1968,HK/68,22,FALSE
-h3,H3N2-Port Chalmers-1973,A/H3N2/Port Chalmers/1/1973,PC/73,23,FALSE
-h3,H3N2-Texas-1977,A/H3N2/Texas/1/1977,TX/77,24,FALSE
-h3,H3N2-Mississippi-1985,A/H3N2/Mississippi/1/1985,MI/85,25,FALSE
-h3,H3N2-Sichuan-1987,A/H3N2/Sichuan/2/1987,Sich/87,26,FALSE
-h3,H3N2-Shangdong-1993,A/H3N2/Shangdong/9/1993,Shan/93,27,FALSE
-h3,H3N2-Nanchang-1995,A/H3N2/Nanchang/933/1995,Nan/95,28,FALSE
-h3,H3N2-Sydney-1997,A/H3N2/Sydney/5/1997,Syd/97,29,FALSE
-h3,H3N2-Panama-1999,A/H3N2/Panama/2007/1999,Pan/99,30,FALSE
-h3,H3N2-Fujian-2002,A/H3N2/Fujian/411/2002,Fuj/02,31,FALSE
-h3,H3N2-New York-2004,A/H3N2/New York/55/2004,NY/04,32,FALSE
-h3,H3N2-Brisbane-2007,A/H3N2/Brisbane/10/2007,Br/07,33,TRUE
-h3,H3N2-Wisconsin-2005,A/H3N2/Wisconsin/67/2005,WI/05,34,FALSE
-h3,H3N2-Uruguay-2007,A/H3N2/Uruguay/716/2007,Uru/07,35,FALSE
-h3,H3N2-Perth-2009,A/H3N2/Perth/16/2009,Per/09,36,FALSE
-h3,H3N2-Victoria-2011,A/H3N2/Victoria/361/2011,Vic/11,37,FALSE
-h3,H3N2-Texas-2012,A/H3N2/Texas/50/2012,TX/12,38,TRUE
-h3,H3N2-Switzerland-2013,A/H3N2/Switzerland/9715293/2013,Switz/13,39,TRUE
-h3,H3N2-Hong Kong-2014,A/H3N2/Hong Kong/4801/2014,HK/14,40,TRUE
-h3,H3N2-Singapore-2016,A/H3N2/Singapore/infimh-16-0019/2016,Sing/16,41,TRUE
-h3,H3N2-Kansas-2017,A/H3N2/Kansas/14/2017,KS/17,42,TRUE
-h3,H3N2-Hong Kong-2019,A/H3N2/Hong Kong/2671/2019,HK/19,43,TRUE
-h3,H3N2-South Australia-2019,A/H3N2/South Australia/34/2019,SA/19,44,TRUE
-h3,H3N2-Tasmania-2020,A/H3N2/Tasmania/503/2020 ,Tas/20,45,TRUE
-h3,H3N2-Darwin-2021,A/H3N2/Darwin/9/2021,Dar/21,46,TRUE
+strain_type,strain_subtype,strain_subtype_short,analysis_name,genbank_strain_name,short_name,factor_order,vaccine_strain
+A,H1N1,h1,H1N1-South Carolina-1918,A/H1N1/South Carolina/1/1918,SC/18,1,FALSE
+A,H1N1,h1,H1N1-Puerto Rico-1934,A/H1N1/Puerto Rico/8/1934,PR/34,2,FALSE
+A,H1N1,h1,H1N1-Weiss-1943,A/H1N1/Weiss/43,Wei/43,3,FALSE
+A,H1N1,h1,H1N1-Fort Monmouth-1947,A/H1N1/Fort Monmouth/1/1947,FM/47,4,FALSE
+A,H1N1,h1,H1N1-Denver-1957,A/H1N1/Denver/1957,Den/57,5,FALSE
+A,H1N1,h1,H1N1-New Jersey-1976,A/H1N1/New Jersey/8/1976,NJ/76,6,FALSE
+A,H1N1,h1,H1N1-Ussr-1977,A/H1N1/Ussr/90/1977,USSR/77,7,FALSE
+A,H1N1,h1,H1N1-Brazil-1978,A/H1N1/Brazil/11/1978,Bra/78,8,FALSE
+A,H1N1,h1,H1N1-California-1978,A/H1N1/California/10/1978,CA/78,9,FALSE
+A,H1N1,h1,H1N1-Chile-1983,A/H1N1/Chile/1/1983,Chi/83,10,FALSE
+A,H1N1,h1,H1N1-Singapore-1986,A/H1N1/Singapore/6/1986,Sing/86,11,FALSE
+A,H1N1,h1,H1N1-Texas-1991,A/H1N1/Texas/36/1991,TX/91,12,FALSE
+A,H1N1,h1,H1N1-Beijing-1995,A/H1N1/Beijing/262/1995,Bei/95,13,FALSE
+A,H1N1,h1,H1N1-New Caledonia-1999,A/H1N1/New Caledonia/20/1999,NC/99,14,FALSE
+A,H1N1,h1,H1N1-Solomon Islands-2006,A/H1N1/Solomon Islands/3/2006,SI/06,15,FALSE
+A,H1N1,h1,H1N1-Brisbane-2007,A/H1N1/Brisbane/59/2007,Bris/07,16,FALSE
+A,H1N1,h1,H1N1-California-2009,A/H1N1/California/07/2009,CA/09,17,TRUE
+A,H1N1,h1,H1N1-Michigan-2015,A/H1N1/Michigan 45/2015,MI/15,18,TRUE
+A,H1N1,h1,H1N1-Brisbane-2018,A/H1N1/Brisbane/02/2018,Bris/18,19,TRUE
+A,H1N1,h1,H1N1-Guangdong Maonan-2019,A/H1N1/Guangdong-Maonan/SWL1536/2019,GD/19,20,TRUE
+A,H1N1,h1,H1N1-Victoria-2019,A/H1N1/Victoria/2570/2019,Vic/19,21,TRUE
+A,H3N2,h3,H3N2-Hong Kong-1968,A/H3N2/Hong Kong/8/1968,HK/68,22,FALSE
+A,H3N2,h3,H3N2-Port Chalmers-1973,A/H3N2/Port Chalmers/1/1973,PC/73,23,FALSE
+A,H3N2,h3,H3N2-Texas-1977,A/H3N2/Texas/1/1977,TX/77,24,FALSE
+A,H3N2,h3,H3N2-Mississippi-1985,A/H3N2/Mississippi/1/1985,MI/85,25,FALSE
+A,H3N2,h3,H3N2-Sichuan-1987,A/H3N2/Sichuan/2/1987,Sich/87,26,FALSE
+A,H3N2,h3,H3N2-Shangdong-1993,A/H3N2/Shangdong/9/1993,Shan/93,27,FALSE
+A,H3N2,h3,H3N2-Nanchang-1995,A/H3N2/Nanchang/933/1995,Nan/95,28,FALSE
+A,H3N2,h3,H3N2-Sydney-1997,A/H3N2/Sydney/5/1997,Syd/97,29,FALSE
+A,H3N2,h3,H3N2-Panama-1999,A/H3N2/Panama/2007/1999,Pan/99,30,FALSE
+A,H3N2,h3,H3N2-Fujian-2002,A/H3N2/Fujian/411/2002,Fuj/02,31,FALSE
+A,H3N2,h3,H3N2-New York-2004,A/H3N2/New York/55/2004,NY/04,32,FALSE
+A,H3N2,h3,H3N2-Brisbane-2007,A/H3N2/Brisbane/10/2007,Br/07,33,TRUE
+A,H3N2,h3,H3N2-Wisconsin-2005,A/H3N2/Wisconsin/67/2005,WI/05,34,FALSE
+A,H3N2,h3,H3N2-Uruguay-2007,A/H3N2/Uruguay/716/2007,Uru/07,35,FALSE
+A,H3N2,h3,H3N2-Perth-2009,A/H3N2/Perth/16/2009,Per/09,36,FALSE
+A,H3N2,h3,H3N2-Victoria-2011,A/H3N2/Victoria/361/2011,Vic/11,37,FALSE
+A,H3N2,h3,H3N2-Texas-2012,A/H3N2/Texas/50/2012,TX/12,38,TRUE
+A,H3N2,h3,H3N2-Switzerland-2013,A/H3N2/Switzerland/9715293/2013,Switz/13,39,TRUE
+A,H3N2,h3,H3N2-Hong Kong-2014,A/H3N2/Hong Kong/4801/2014,HK/14,40,TRUE
+A,H3N2,h3,H3N2-Singapore-2016,A/H3N2/Singapore/infimh-16-0019/2016,Sing/16,41,TRUE
+A,H3N2,h3,H3N2-Kansas-2017,A/H3N2/Kansas/14/2017,KS/17,42,TRUE
+A,H3N2,h3,H3N2-Hong Kong-2019,A/H3N2/Hong Kong/2671/2019,HK/19,43,TRUE
+A,H3N2,h3,H3N2-South Australia-2019,A/H3N2/South Australia/34/2019,SA/19,44,TRUE
+A,H3N2,h3,H3N2-Tasmania-2020,A/H3N2/Tasmania/503/2020 ,Tas/20,45,TRUE
+A,H3N2,h3,H3N2-Darwin-2021,A/H3N2/Darwin/9/2021,Dar/21,46,TRUE
+B,Presplit,bpre,bpre-Lee-1940,B/Lee/1940,Lee/40,46,FALSE
+B,Presplit,bpre,bpre-Maryland-1959,B/Maryland/1959,MD/59,46,FALSE
+B,Presplit,bpre,bpre-Singapore-1964,B/Singapore/1964,Sing/64,46,FALSE
+B,Victoria,bvic,bvic-Victoria-2006,B/Victoria/02/1987,Vic/87,46,FALSE
+B,Victoria,bvic,bvic-Hong Kong-2001,B/Hong Kong/330/2001,HK/01,46,FALSE
+B,Victoria,bvic,bvic-Malaysia-2004,B/Malaysia/27127/2004,Mal/04,46,FALSE
+B,Victoria,bvic,bvic-Victoria-2006,B/Victoria/326/2006,Vic/06,46,FALSE
+B,Victoria,bvic,bvic-Brisbane-2008,B/Brisbane/60/2008,Bris/08,46,TRUE
+B,Victoria,bvic,bvic-Colorado-2017,B/Colorado/06/2017,CO/17,46,TRUE
+B,Victoria,bvic,bvic-Washington-2019,B/Washington/02/2019,WA/19,46,TRUE
+B,Victoria,bvic,bvic-Michigan-2021,B/Michigan/01/2021,MI/21,46,TRUE
+B,Yamagata,byam,byam-Yamagata-1988,B/Yamagata/16/1988,Yam/88,46,FALSE
+B,Yamagata,byam,byam-Harbin-1994,B/Harbin/7/1994,Harb/94,46,FALSE
+B,Yamagata,byam,byam-Sichuan-1999,B/Sichuan/379/1999,Sich/99,46,FALSE
+B,Yamagata,byam,byam-Florida-2006,B/Florida/4/2006,FL/06,46,FALSE
+B,Yamagata,byam,byam-Wisconsin-2010,B/Wisconsin/01/2010,WI/10,46,FALSE
+B,Yamagata,byam,byam-Texas-2011,B/Texas/06/2011,TX/11,46,FALSE
+B,Yamagata,byam,byam-Massachusetts-2012,B/Massachusetts/02/2012,MA/12,46,TRUE
+B,Yamagata,byam,byam-Phuket-2013,B/Phuket/3073/2013,Phu/13,46,TRUE

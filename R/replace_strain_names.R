@@ -11,7 +11,8 @@
 #' that is not currently in the strain list, you will need to add it and
 #' submit a PR to `hgp`!
 #' @param to Format of the returned names. Should be one of "short", "full",
-#' "analysis", or "subtype".
+#' "analysis", "subtype", "type", "type-subtype" (which returns a result of
+#' the form "A(H1N1)").
 #' @param drop If TRUE, levels of the returned factor variable are dropped. If
 #' FALSE, the level set of the factor will still contain every strain in
 #' ["handelgroup_strain_names"], which is typically not desirable.
@@ -75,9 +76,19 @@ replace_strain_names <- function(x, from = "analysis", to = "short",
 	} else if (to == "short") {
 		vals <- handelgroup_strain_names$short_name[locs]
 	} else if (to == "subtype") {
-		vals <- handelgroup_strain_names$subtype[locs]
-	} else {
-		stop("'to' should be 'analysis', 'full', 'short', or 'subtype'.")
+		vals <- handelgroup_strain_names$strain_subtype[locs]
+	} else if (to == "type") {
+		vals <- handelgroup_strain_names$strain_type[locs]
+	} else if (to == "type-subtype") {
+		vals <- paste0(
+			handelgroup_strain_names$strain_type[locs], "(",
+			handelgroup_strain_names$strain_subtype[locs], ")"
+		)
+	}else {
+		stop(paste0(
+			"'to' should be one of: 'analysis', 'full', 'short', 'subtype', 'type'",
+			", or 'type-subtype'."
+		))
 	}
 
 	# If requested, remove unseen factor levels
