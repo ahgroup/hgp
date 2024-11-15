@@ -48,7 +48,7 @@ hai_trans <- function(x, dir = c("log", "natural")) {
 	} else if (startsWith(tolower(dir)) == "n") {
 		return(hai_to_natural_scale(x))
 	} else {
-		rlang::abort("'dir' should be either 'log' or 'natural'.")
+		stop("'dir' should be either 'log' or 'natural'.")
 	}
 }
 
@@ -85,7 +85,7 @@ format_hai_data <- function(data, post_titer, pre_titer = NULL,
 														log_out = log_scale) {
 	# If post_titer is named "y" we'll get a conflict!
 	if (isTRUE(post_titer == "y")) {
-		rlang::abort(paste0(
+		stop(paste0(
 			"If the post_titer argument is set to 'y' you'll get a ",
 			"column named conflict with the brms format!"
 		))
@@ -99,7 +99,7 @@ format_hai_data <- function(data, post_titer, pre_titer = NULL,
 		post <- data[[post_titer]]
 		log_post <- log2(post / 5)
 	} else {
-		rlang::abort("'log scale' argument should be TRUE or FALSE.")
+		stop("'log scale' argument should be TRUE or FALSE.")
 	}
 
 	# Now deal with the pretiter -- everything is the same, but we need to check
@@ -155,6 +155,9 @@ format_hai_data <- function(data, post_titer, pre_titer = NULL,
 #' @return formatted post-titer values.
 #'
 format_posttiter <- function(log_post, log_out) {
+	# Fix "no visible binding" R CMD CHK note
+	lwr <- upr <- y <- y2 <- NULL
+
 	# Construct the base table of censoring limits
 	out <- tibble::tibble(
 		lwr = log_post,
@@ -190,7 +193,9 @@ format_posttiter <- function(log_post, log_out) {
 #' @param y Vector of log-scale post-vacciation titer values
 #' @param x Vector of log-scale pre-vaccination titer values.
 #'
-#' @return
+#' @return A tibble containining three numeric columns: `z`, the log-scale
+#' titer increase, `z_l`, the lower bound of `z`, and `z_u`, the upper
+#' bound of `z`.
 #'
 calculate_ti_bounds <- function(y, x) {
 	ly <- ifelse(y == 0, -Inf, y)
@@ -215,9 +220,13 @@ calculate_ti_bounds <- function(y, x) {
 #' @param log_pre Vector of log-scale pre-vaccination titer values.
 #' @param log_out Boolean, TRUE if the outcome should be on the log scale.
 #'
-#' @return
+#' @return A data frame containing the formatted `c`, `y`, and `y2` numeric
+#' vectors representing the titer increase in brms censoring notation.
 #'
 format_titerincrease <- function(log_post, log_pre, log_out) {
+	# Fix 'no visible binding' R CMD CHK note
+	z <- z_l <- z_u <- y <- y2 <- NULL
+
 	# First calculate the censoring bounds for each observation
 	censoring_bounds <- calculate_ti_bounds(log_post, log_pre)
 

@@ -16,7 +16,8 @@ that is not currently in the strain list, you will need to add it and
 submit a PR to `hgp`!}
 
 \item{to}{Format of the returned names. Should be one of "short", "full",
-"analysis", or "subtype".}
+"analysis", "subtype", "type", "type-subtype" (which returns a result of
+the form "A(H1N1)").}
 
 \item{drop}{If TRUE, levels of the returned factor variable are dropped. If
 FALSE, the level set of the factor will still contain every strain in
