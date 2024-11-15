@@ -9,13 +9,15 @@
 
 handelgroup_strain_names <- readr::read_csv(
 	here::here("data-raw", "handelgroup-strain-names.csv"),
-	col_types = 'fcccil'
+	col_types = 'fffcccil'
 ) |>
 	# Remove the useless columns
 	dplyr::select(-c(vaccine_strain)) |>
 	# Append a row so sorting the overall entry for CATEs is easy
 	tibble::add_row(
-		subtype = "",
+		strain_type = "",
+		strain_subtype = "",
+		strain_subtype_short = "",
 		analysis_name = "Overall",
 		short_name = "Overall",
 		genbank_strain_name = "Overall",
@@ -23,11 +25,6 @@ handelgroup_strain_names <- readr::read_csv(
 	) |>
 	# Make all of the name variables ordered factors and clean up the subtypes
 	dplyr::mutate(
-		subtype = factor(
-			as.character(subtype),
-			levels = c("h1", "h3", ""),
-			labels = c("H1N1", "H3N2", "")
-		),
 		# Put the different name factors in order
 		dplyr::across(
 			c(analysis_name, genbank_strain_name, short_name),
