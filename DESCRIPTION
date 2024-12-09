@@ -1,7 +1,7 @@
 Package: hgp
 Type: Package
 Title: HandelGroupPackage
-Version: 0.0.06
+Version: 0.0.07
 Authors@R: 
     person("Zane", "Billings", , "wz.billings@gmail.com", role = c("aut", "cre"),
            comment = c(ORCID = "0000-0002-0184-6134"))

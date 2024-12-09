@@ -1,7 +1,7 @@
 strain_type,strain_subtype,strain_subtype_short,analysis_name,genbank_strain_name,short_name,factor_order,vaccine_strain
 A,H1N1,h1,H1N1-South Carolina-1918,A/H1N1/South Carolina/1/1918,SC/18,1,FALSE
 A,H1N1,h1,H1N1-Puerto Rico-1934,A/H1N1/Puerto Rico/8/1934,PR/34,2,FALSE
-A,H1N1,h1,H1N1-Weiss-1943,A/H1N1/Weiss/43,Wei/43,3,FALSE
+A,H1N1,h1,H1N1-Weiss-1943,A/H1N1/Weiss/1943,Wei/43,3,FALSE
 A,H1N1,h1,H1N1-Fort Monmouth-1947,A/H1N1/Fort Monmouth/1/1947,FM/47,4,FALSE
 A,H1N1,h1,H1N1-Denver-1957,A/H1N1/Denver/1957,Den/57,5,FALSE
 A,H1N1,h1,H1N1-New Jersey-1976,A/H1N1/New Jersey/8/1976,NJ/76,6,FALSE
