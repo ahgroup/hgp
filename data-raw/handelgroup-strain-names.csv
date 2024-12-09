@@ -45,22 +45,23 @@ A,H3N2,h3,H3N2-Hong Kong-2019,A/H3N2/Hong Kong/2671/2019,HK/19,43,TRUE
 A,H3N2,h3,H3N2-South Australia-2019,A/H3N2/South Australia/34/2019,SA/19,44,TRUE
 A,H3N2,h3,H3N2-Tasmania-2020,A/H3N2/Tasmania/503/2020 ,Tas/20,45,TRUE
 A,H3N2,h3,H3N2-Darwin-2021,A/H3N2/Darwin/9/2021,Dar/21,46,TRUE
-B,Presplit,bpre,bpre-Lee-1940,B/Lee/1940,Lee/40,46,FALSE
-B,Presplit,bpre,bpre-Maryland-1959,B/Maryland/1959,MD/59,46,FALSE
-B,Presplit,bpre,bpre-Singapore-1964,B/Singapore/1964,Sing/64,46,FALSE
-B,Victoria,bvic,bvic-Victoria-2006,B/Victoria/02/1987,Vic/87,46,FALSE
-B,Victoria,bvic,bvic-Hong Kong-2001,B/Hong Kong/330/2001,HK/01,46,FALSE
-B,Victoria,bvic,bvic-Malaysia-2004,B/Malaysia/27127/2004,Mal/04,46,FALSE
-B,Victoria,bvic,bvic-Victoria-2006,B/Victoria/326/2006,Vic/06,46,FALSE
-B,Victoria,bvic,bvic-Brisbane-2008,B/Brisbane/60/2008,Bris/08,46,TRUE
-B,Victoria,bvic,bvic-Colorado-2017,B/Colorado/06/2017,CO/17,46,TRUE
-B,Victoria,bvic,bvic-Washington-2019,B/Washington/02/2019,WA/19,46,TRUE
-B,Victoria,bvic,bvic-Michigan-2021,B/Michigan/01/2021,MI/21,46,TRUE
-B,Yamagata,byam,byam-Yamagata-1988,B/Yamagata/16/1988,Yam/88,46,FALSE
-B,Yamagata,byam,byam-Harbin-1994,B/Harbin/7/1994,Harb/94,46,FALSE
-B,Yamagata,byam,byam-Sichuan-1999,B/Sichuan/379/1999,Sich/99,46,FALSE
-B,Yamagata,byam,byam-Florida-2006,B/Florida/4/2006,FL/06,46,FALSE
-B,Yamagata,byam,byam-Wisconsin-2010,B/Wisconsin/01/2010,WI/10,46,FALSE
-B,Yamagata,byam,byam-Texas-2011,B/Texas/06/2011,TX/11,46,FALSE
-B,Yamagata,byam,byam-Massachusetts-2012,B/Massachusetts/02/2012,MA/12,46,TRUE
-B,Yamagata,byam,byam-Phuket-2013,B/Phuket/3073/2013,Phu/13,46,TRUE
+B,Presplit,bpre,bpre-Lee-1940,B/Lee/1940,Lee/40,47,FALSE
+B,Presplit,bpre,bpre-Maryland-1959,B/Maryland/1959,MD/59,48,FALSE
+B,Presplit,bpre,bpre-Singapore-1964,B/Singapore/1964,Sing/64,49,FALSE
+B,Victoria,bvic,bvic-Victoria-2006,B/Victoria/02/1987,Vic/87,50,FALSE
+B,Victoria,bvic,bvic-Hong Kong-2001,B/Hong Kong/330/2001,HK/01,51,FALSE
+B,Victoria,bvic,bvic-Malaysia-2004,B/Malaysia/27127/2004,Mal/04,52,FALSE
+B,Victoria,bvic,bvic-Victoria-2006,B/Victoria/326/2006,Vic/06,53,FALSE
+B,Victoria,bvic,bvic-Brisbane-2008,B/Brisbane/60/2008,Bris/08,54,TRUE
+B,Victoria,bvic,bvic-Colorado-2017,B/Colorado/06/2017,CO/17,55,TRUE
+B,Victoria,bvic,bvic-Washington-2019,B/Washington/02/2019,WA/19,56,TRUE
+B,Victoria,bvic,bvic-Michigan-2021,B/Michigan/01/2021,MI/21,57,TRUE
+B,Victoria,bvic,bvic-Austria-2021,B/Austria/1359417/2021,Aus/21,58,TRUE
+B,Yamagata,byam,byam-Yamagata-1988,B/Yamagata/16/1988,Yam/88,59,FALSE
+B,Yamagata,byam,byam-Harbin-1994,B/Harbin/7/1994,Harb/94,60,FALSE
+B,Yamagata,byam,byam-Sichuan-1999,B/Sichuan/379/1999,Sich/99,61,FALSE
+B,Yamagata,byam,byam-Florida-2006,B/Florida/4/2006,FL/06,62,FALSE
+B,Yamagata,byam,byam-Wisconsin-2010,B/Wisconsin/01/2010,WI/10,63,FALSE
+B,Yamagata,byam,byam-Texas-2011,B/Texas/06/2011,TX/11,64,FALSE
+B,Yamagata,byam,byam-Massachusetts-2012,B/Massachusetts/02/2012,MA/12,65,TRUE
+B,Yamagata,byam,byam-Phuket-2013,B/Phuket/3073/2013,Phu/13,66,TRUE
