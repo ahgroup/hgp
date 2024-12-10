@@ -58,7 +58,8 @@ replace_strain_names <- function(x, from = "analysis", to = "short",
 	}
 
 	# Make sure all values of x exist in the virus info table
-	if (!(all(x %in% from_vec))) {
+	# Use na.omit to make sure that NAs can pass through, though.
+	if (!(all(stats::na.omit(x) %in% from_vec))) {
 		stop(paste0(
 			"'x' should be a vector of ", from, " names that exist in the",
 			' virus-info sheet.'
