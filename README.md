@@ -1,6 +1,7 @@
 
 
 <!-- README.md is generated from README.qmd. Please edit that file -->
+
 <!-- ASCII ART BANNER TITLE -->
 
       _    _                 _      _  _____                       _____           _                    
@@ -17,6 +18,7 @@
 # `hgp: HandelGroupPackage`
 
 <!-- badges: start -->
+
 <!-- badges: end -->
 
 `hgp` is a package for storing utility functions for use across
@@ -104,3 +106,15 @@ ggplot2::theme_set(hgp::theme_ms())
   repo or make a new branch. This way, other users can continue to
   install the working version of the package while you develop new
   features. Remember to commit your work regularly.
+
+# Note
+
+For some reason, `R CMD check` started returning a NOTE that says
+
+> checking for non-standard things in the check directory … NOTE
+>
+> Found the following files/directories:
+>
+> ‘’NULL’’
+
+Zane has absolutely no idea where this came from or how to fix it.

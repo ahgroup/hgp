@@ -13,9 +13,16 @@
 # for model files of an intermediate size.
 ###
 
-# Utility function that, given a file path, returns the entire file path
-# without the final component that has a file extension. The point is to
-# get the full directory path that a file should live in.
+
+#' Extract directory from file path
+#'
+#' Utility function that, given a file path, returns the entire file path
+#' without the final component that has a file extension. The point is to
+#' get the full directory path that a file should live in.
+#' @param file_path a character vector of file paths
+#'
+#' @returns a character vector of directorys in which the files would be saved.
+#' @export
 get_directory_path <- function(file_path) {
 	# Check if the file path contains an extension
 	if (!grepl("\\.[^\\\\/]+$", file_path)) {
@@ -27,11 +34,24 @@ get_directory_path <- function(file_path) {
 	return(directory_path)
 }
 
-# We need to run a shell command for this, and the way we have to do that
-# is different or Windows vs unix-based OS. So this function will detect the
-# OS that an individual is using. If it isn't Windows or Unix, the user will
-# get an error and the (de)chunker won't work.
+
+#' Detect operating system
+#'
+#' We need to run a shell command for the model (de)chunker, and the way we have
+#' to do that is different or Windows vs unix-based OS. So this function will
+#' detect the OS that an individual is using. If it isn't Windows or Unix, the
+#' user will get an error and the (de)chunker won't work.
+#'
+#' @param verbose should a message be printed when the function runs?
+#'
+#' @returns `.Platform$OS.type`
+#' @export
+#'
+#' @examples detect_os()
 detect_os <- function(verbose = TRUE) {
+	requireNamespace("rlang", quietly = TRUE)
+	requireNamespace("crayon", quietly = TRUE)
+
 	# This part does the entire OS detection and seems to be the most stable
 	# or preferred way to do that.
 	os_detected <- .Platform$OS.type
@@ -54,16 +74,24 @@ detect_os <- function(verbose = TRUE) {
 	invisible(os_detected)
 }
 
-# This function constructs a shell call that is appropriate for the system
-# OS. The system OS is passed as the first argument, so it should be detected
-# before calling this function or passed manually.
-# The remaining arguments are the arguments for the shell call, which are the
-# same regardless of OS for the purposes of the model (de)chunker.
-# We also implement error handling via purrr::possibly(). The "otherwise" value
-# in purrr possibly is set to -1 because this is the error code normally
-# returned by a shell() or system() invocation if a system-level error occurs.
+#' Run the appropriate bash-command invoker function by OS
+#'
+#' This function constructs a shell call that is appropriate for the system
+#' OS. The system OS is passed as the first argument, so it should be detected
+#' before calling this function or passed manually.
+#' The remaining arguments are the arguments for the shell call, which are the
+#' same regardless of OS for the purposes of the model (de)chunker.
+#' We also implement error handling via purrr::possibly(). The "otherwise" value
+#' in purrr possibly is set to -1 because this is the error code normally
+#' returned by a shell() or system() invocation if a system-level error occurs.
+#'
+#' @param os_detected a string, usually the result of `.Platform$OS.type`.
+#' @param ... the arguments to pass to either `shell()` or `system()`.
+#'
+#' @returns Whatever is returned by `shell()` or `system()`.
+#' @export
 os_call <- function(os_detected, ...) {
-
+	requireNamespace("purrr", quietly = TRUE)
 	# Construct the function call based on the OS
 	if (os_detected == "windows") {
 		FUN <- shell
@@ -86,20 +114,29 @@ os_call <- function(os_detected, ...) {
 }
 
 # This function is the model chunker.
-# The two arguments are both character vectors that should be equal length.
-# It takes each file specified in the vector "files_to_chunk", separates it
-# into smaller chunks with a fixed memory size, and saves all of the chunks to
-# the DIRECTORY PATH at the same position specified in
-# "destination_directories".
-# This invokes the bash command "split" which is available natively on both
-# windows and MacOS. If you're on a different OS you might need to install it
-# or something, I don't know.
-# You can learn how the "split" command works here:
-# https://web.archive.org/web/20250228173733/https://man7.org/linux/man-pages/man1/split.1.html
-# or by googling it.
-# Note that the backslash character \ indicates an escape character in an
-# R string (https://en.wikipedia.org/wiki/Escape_character).
+#' Model Chunker
+#'
+#' The two arguments are both character vectors that should be equal length. It
+#' takes each file specified in the vector "files_to_chunk", separates it into
+#' smaller chunks with a fixed memory size, and saves all of the chunks to the
+#' DIRECTORY PATH at the same position specified in "destination_directories".
+#' This invokes the bash command "split" which is available natively on both
+#' windows and MacOS. If you're on a different OS you might need to install it
+#' or something, I don't know. You can learn how the "split" command works here:
+#' \url{https://web.archive.org/web/20250228173733/https://man7.org/linux/man-pages/man1/split.1.html}
+#' or by googling it. Note that the backslash character indicates an escape
+#' character in an R string (\url{https://en.wikipedia.org/wiki/Escape_character}).
+#'
+#' @param files_to_chunk character vector of length n.
+#' @param destination_directories character vector also of length n.
+#'
+#' @returns invisibly, the last result of a shell command to execute.
+#' @export
 model_split <- function(files_to_chunk, destination_directories) {
+	requireNamespace("rlang", quietly = TRUE)
+	requireNamespace("purrr", quietly = TRUE)
+	requireNamespace("crayon", quietly = TRUE)
+
 	# Detect the OS and message user about it
 	this_os <- detect_os()
 
@@ -153,20 +190,29 @@ model_split <- function(files_to_chunk, destination_directories) {
 	invisible(res)
 }
 
-# This function is the model dechunker.
-# The two arguments are both character vectors that should be equal length.
-# Each directory specified in the vector "chunk_directories" should be a
-# directory created by invoking model_cat() that contains the individual
-# chunks from a splitted file.
-# This function recombines then and saves the combined file to the file name
-# in the same position in the vector "destination_file".
-# This invokes the bash command "cat" which is available natively on both
-# windows and MacOS. If you're on a different OS you might need to install it
-# or something, I don't know.
-# You can learn how the "cat" command works here:
-# https://web.archive.org/web/20250228174620/https://www.man7.org/linux/man-pages/man1/cat.1.html
-# or by googling it.
+#' Model dechunker
+#'
+#' The two arguments are both character vectors that should be equal length.
+#' Each directory specified in the vector "chunk_directories" should be a
+#' directory created by invoking model_cat() that contains the individual chunks
+#' from a splitted file. This function recombines then and saves the combined
+#' file to the file name in the same position in the vector "destination_file".
+#' This invokes the bash command "cat" which is available natively on both
+#' windows and MacOS. If you're on a different OS you might need to install it
+#' or something, I don't know. You can learn how the "cat" command works here:
+#' \url{https://web.archive.org/web/20250228174620/https://www.man7.org/linux/man-pages/man1/cat.1.html}
+#' or by googling it.
+#'
+#' @param chunk_directories character vector of length n.
+#' @param destination_file character vector also of length n.
+#'
+#' @returns invisibly, the last shell call result.
+#' @export
 model_cat <- function(chunk_directories, destination_file) {
+	requireNamespace("rlang", quietly = TRUE)
+	requireNamespace("purrr", quietly = TRUE)
+	requireNamespace("crayon", quietly = TRUE)
+
 	# Detect the OS and message user about it
 	this_os <- detect_os()
 

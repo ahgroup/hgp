@@ -110,3 +110,17 @@ make a new branch. This way, other users can continue to install the working
 version of the package while you develop new features. Remember to commit
 your work regularly.
 
+# Note
+
+For some reason, `R CMD check` started returning a NOTE that says
+
+> checking for non-standard things in the check directory ... NOTE
+> 
+> Found the following files/directories:
+>
+>   ''NULL''
+
+Zane has absolutely no idea where this came from or how to fix it. It started
+showing up when I added the model de-chunker function, but even after reverting
+the commit and everything it still seems to show up. Hopefully it doesn't
+matter.
