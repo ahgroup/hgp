@@ -17,6 +17,8 @@
 
 # `hgp: HandelGroupPackage`
 
+**2025-06-05: Now Andreas thinks you shouldn't install this package because it isn't on CRAN. So if you need any of the code you should copy and paste it**
+
 <!-- badges: start -->
 
 <!-- badges: end -->
@@ -28,7 +30,7 @@ handelgroup. Right now, `hgp` contains the following utilities:
 - A set of functions for working with HAI data;
 - A function to standardize influenza strain names for the strains used
   in the datasets we have available to us; along with a corresponding
-  data set of standardized strain names.
+  data set of standardized strain names. (**ZB isn't sure that this is the best way to do this going forward because it relies on someone maintaining the list and probably no one else will do that.**)
 
 **Because this repo is public, absolutely NO sensitive or confidential
 information should be stored here. This repo is strictly for shared
